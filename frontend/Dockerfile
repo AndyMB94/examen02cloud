@@ -3,9 +3,10 @@ FROM node:18
 WORKDIR /app
 
 COPY package*.json ./
-RUN npm install
 
-# Agregar binarios locales al PATH para encontrar vite
+# Fuerza instalación de todas las dependencias, incluyendo devDependencies
+RUN npm install --include=dev
+
 ENV PATH="/app/node_modules/.bin:$PATH"
 
 COPY . .
