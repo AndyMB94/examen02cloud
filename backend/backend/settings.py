@@ -91,8 +91,12 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'miapp',
+        'USER': 'user',
+        'PASSWORD': 'pass',
+        'HOST': 'db',      # Muy importante: debe ser "db" porque así se llama el contenedor en docker-compose
+        'PORT': '5432',
     }
 }
 
