@@ -1,0 +1,11 @@
+# node modules
+frontend/node_modules
+# Python venv
+backend/venv
+# Django DB
+backend/db.sqlite3
+# Byte-compiled
+__pycache__/
+*.py[cod]
+# Docker local volumes (opcional)
+pgdata/
