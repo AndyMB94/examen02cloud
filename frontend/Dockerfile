@@ -5,6 +5,9 @@ WORKDIR /app
 COPY package*.json ./
 RUN npm install
 
+# Agregar binarios locales al PATH para encontrar vite
+ENV PATH="/app/node_modules/.bin:$PATH"
+
 COPY . .
 
 RUN npm run build
